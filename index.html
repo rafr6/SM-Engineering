@@ -35,9 +35,7 @@
         margin: 5px 0 12px 0;
         font-size: 12px;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
-        white-space: nowrap; /* ✅ সব টেক্সট এক লাইনে রাখার জন্য */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        text-align: center;
     }
 
     .logo {
@@ -99,14 +97,21 @@
 
     /* Back Side */
     .id-back .header-bar {
-        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 8px;
+        font-size: 9px; /* ছোট ফন্ট */
+        margin-bottom: 10px;
     }
+
     .id-back .contact-title {
         font-size: 12px;
         font-weight: bold;
         margin-bottom: 6px;
         color: #002060;
     }
+
     .id-back .contact-info {
         font-size: 10px;
         line-height: 1.4;
@@ -135,7 +140,11 @@
 
 <!-- Back Side -->
 <div class="id-card id-back">
-    <div class="header-bar">If found Please return the Card to</div>
+    <div class="header-bar">
+        <span></span>
+        <span>If found Please return the Card to</span>
+        <span></span>
+    </div>
     <div class="logo">SM</div>
     <div class="company">SM ENGINEERING</div>
     <div class="contact-title">CONTACT INFORMATION</div>
