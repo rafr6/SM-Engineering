@@ -27,7 +27,26 @@
         text-align: center;
     }
 
-    /* ফ্রন্ট হেডার (চিকন, একদম উপরে) */
+    /* বাম-ডান পাতলা গ্রেডিয়েন্ট বর্ডার */
+    .id-card::before,
+    .id-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 4px; /* পাতলা লাইন */
+        height: 100%;
+        background: linear-gradient(180deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
+    }
+    .id-card::before {
+        left: 0;
+        border-radius: 12px 0 0 12px;
+    }
+    .id-card::after {
+        right: 0;
+        border-radius: 0 12px 12px 0;
+    }
+
+    /* ফ্রন্ট হেডার */
     .id-front .top-thin-bar {
         position: absolute;
         top: 0;
@@ -116,7 +135,7 @@
     /* Back Side */
     .id-back .header-bar {
         position: absolute;
-        top: 0; /* একদম উপরের লেভেল */
+        top: 0;
         left: 0;
         width: 100%;
         padding: 4px 0;
@@ -126,7 +145,7 @@
         border-radius: 12px 12px 0 0;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
         color: #fff;
-        margin: 0; /* কোনো গ্যাপ না রাখার জন্য */
+        margin: 0;
     }
 
     .id-back .logo img {
