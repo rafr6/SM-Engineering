@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ID Card</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    .id-card {
+        width: 2.1in;
+        height: 3.37in;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        padding: 15px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .header-bar {
+        width: 100%;
+        padding: 4px 0;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 6px;
+        margin: 5px 0 12px 0;
+        font-size: 12px;
+        background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #777;
+        margin-top: 5px;
+    }
+
+    .company {
+        font-weight: bold;
+        color: #002060;
+        margin-top: 4px;
+        font-size: 13px;
+    }
+
+    .photo {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #999;
+        border-radius: 50%;
+        margin: 8px auto;
+        background: #ccc;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 5px 0 2px 0;
+    }
+
+    .designation {
+        font-size: 11px;
+        color: #444;
+        margin-bottom: 8px;
+    }
+
+    .details {
+        font-size: 11px;
+        text-align: left;
+        margin-left: 15px;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+
+    .footer-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 4px 0;
+        color: #fff;
+        font-size: 10px;
+        text-align: right;
+        border-radius: 0 0 12px 12px;
+        padding-right: 10px;
+        background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
+    }
+
+    /* Back Side */
+    .id-back .header-bar {
+        font-size: 11px;
+    }
+    .id-back .contact-title {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 6px;
+        color: #002060;
+    }
+    .id-back .contact-info {
+        font-size: 10px;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Front Side -->
+<div class="id-card id-front">
+    <div class="logo">SM</div>
+    <div class="company">SM ENGINEERING</div>
+    <div class="header-bar">ID CARD</div>
+    <div class="photo"></div>
+    <div class="name">MD RAHIM MIA</div>
+    <div class="designation">EXCAVATOR OPERATOR</div>
+    <div class="details">
+        <b>Employer ID :</b> 1073 <br>
+        <b>Blood Group :</b> AB+ <br>
+        <b>Joined :</b> 02-01-2022 <br>
+        <b>Expiry :</b> 02-05-2023
+    </div>
+    <div class="footer-bar">Authorised</div>
+</div>
+
+<!-- Back Side -->
+<div class="id-card id-back">
+    <div class="header-bar">If found Please return the Card to</div>
+    <div class="logo">SM</div>
+    <div class="company">SM ENGINEERING</div>
+    <div class="contact-title">CONTACT INFORMATION</div>
+    <div class="contact-info">
+        Asian Haighway, Sonarampur <br>
+        Ashuganj, Brahmanbaria, DIT Project <br>
+        CODE NO- 08528. <br>
+        Cell: +880 1711-325817, +880 1711-325820 <br>
+        E-mail: smengineering705@gmail.com
+    </div>
+</div>
+
+</body>
+</html>
