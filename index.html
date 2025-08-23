@@ -32,7 +32,7 @@
         color: #fff;
         font-weight: bold;
         border-radius: 6px;
-        margin: 5px 0 12px 0;
+        margin: 5px 0 10px 0;
         font-size: 12px;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
         text-align: center;
@@ -41,13 +41,13 @@
     .logo img {
         width: 45px;   /* লোগোর সাইজ */
         height: auto;
-        margin-top: 5px;
+        margin-top: 0px;  /* আগে 5px ছিল */
     }
 
     .company {
         font-weight: bold;
         color: #002060;
-        margin-top: 4px;
+        margin-top: 3px;
         font-size: 13px;
     }
 
@@ -97,10 +97,10 @@
     /* Back Side */
     .id-back .header-bar {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* ডান থেকে সেন্টারে আনা হলো */
         align-items: center;
-        padding: 2px 8px;
-        font-size: 9px; /* ছোট ফন্ট */
+        padding: 2px 6px;
+        font-size: 8px; /* ছোট ফন্ট */
         margin-bottom: 10px;
     }
 
@@ -142,9 +142,7 @@
 <!-- Back Side -->
 <div class="id-card id-back">
     <div class="header-bar">
-        <span></span>
-        <span>If found Please return the Card to</span>
-        <span></span>
+        <span>If found please return the card to</span>
     </div>
     <div class="logo">
         <img src="logo.png" alt="Company Logo">
