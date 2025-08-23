@@ -33,9 +33,9 @@
         content: "";
         position: absolute;
         top: 0;
-        width: 2px; /* আরো চিকন */
+        width: 2px;
         height: 100%;
-        background: linear-gradient(180deg, #42a5f5, #7e57c2); /* নীল থেকে বেগুনি */
+        background: linear-gradient(180deg, #42a5f5, #7e57c2);
     }
     .id-card::before {
         left: 0;
@@ -119,17 +119,30 @@
         line-height: 1.5;
     }
 
+    /* Footer Bar (Authorised + Signature inside) */
     .footer-bar {
         position: absolute;
         bottom: 0;
         right: 0;
         width: 100%;
-        padding: 8px 10px;
+        height: 50px; /* একটু লম্বা করা হলো যাতে সিগনেচার ফিট হয় */
+        padding: 4px 6px;
         color: #fff;
         font-size: 10px;
-        text-align: right;
+        text-align: center;
         border-radius: 0 0 12px 12px;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* লেখাটা একদম নিচে থাকবে */
+        align-items: center;
+    }
+
+    .footer-bar img {
+        width: 60px;  /* সিগনেচার সাইজ */
+        height: auto;
+        margin-bottom: -4px;
     }
 
     /* Back Side */
@@ -214,7 +227,10 @@
             <b>Joined :</b> 02-01-2022 <br>
             <b>Expiry :</b> 02-05-2023
         </div>
-        <div class="footer-bar">Authorised</div>
+        <div class="footer-bar">
+            <img src="signature.png" alt="Signature">
+            Authorised
+        </div>
     </div>
 
     <!-- Back Side -->
