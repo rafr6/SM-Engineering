@@ -41,7 +41,7 @@
     .logo img {
         width: 45px;
         height: auto;
-        margin-top: 0px;  /* লোগো আরও উপরে আনা হলো */
+        margin-top: -8px;  /* লোগো আরও উপরে তোলা হলো */
     }
 
     .company {
@@ -91,30 +91,31 @@
     .footer-bar {
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 4px 10px;
+        right: 0;   /* ডানদিকে আনা হলো */
+        width: 50%; /* শুধু ডান দিকের জন্য জায়গা */
+        padding: 4px 0;
         color: #fff;
         font-size: 10px;
-        text-align: left;   /* বাম পাশে আনা হলো */
-        border-radius: 0 0 12px 12px;
+        text-align: center;  /* সেন্টার করা হলো */
+        border-radius: 0 0 12px 0;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
     }
 
     /* Back Side */
     .id-back .header-bar {
         display: flex;
-        justify-content: center;  /* সেন্টার */
+        justify-content: center;  /* একদম সেন্টার */
         align-items: center;
         padding: 4px 6px;
         font-size: 9px;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .id-back .contact-title {
         font-size: 12px;
         font-weight: bold;
-        margin-top: 18px;   /* কোম্পানির নাম থেকে আরও নিচে আনা হলো */
+        margin-top: 18px;
         margin-bottom: 6px;
         color: #002060;
     }
