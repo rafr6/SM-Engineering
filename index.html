@@ -105,7 +105,7 @@
         bottom: 0;
         right: 0;
         width: 100%;
-        padding: 4px 10px;
+        padding: 8px 10px;  /* লেখা নিচে নামানো হলো */
         color: #fff;
         font-size: 10px;
         text-align: right;
@@ -119,10 +119,10 @@
         top: 0;
         left: 0;
         width: 100%;
-        border-radius: 12px 12px 0 0;
-        padding: 4px 6px;
+        padding: 4px 0; /* উপরের লেভেলের সাথে মিলিয়ে */
         font-size: 9px;
         text-align: center;
+        border-radius: 12px 12px 0 0;
     }
 
     .id-back .logo img {
@@ -136,7 +136,7 @@
     .id-back .contact-title {
         font-size: 12px;
         font-weight: bold;
-        margin-top: 26px; /* নিচে নামানো হলো */
+        margin-top: 28px; /* কোম্পানির নাম থেকে আরও নিচে */
         margin-bottom: 6px;
         color: #002060;
     }
@@ -171,46 +171,48 @@
 </head>
 <body>
 
-<!-- Front Side -->
-<div class="id-card id-front">
-    <div class="top-thin-bar"></div>
-    <div class="logo">
-        <img src="logo.png" alt="Company Logo">
+<div id="cardContainer" style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
+    <!-- Front Side -->
+    <div class="id-card id-front">
+        <div class="top-thin-bar"></div>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <div class="company">SM ENGINEERING</div>
+        <div class="header-bar">ID CARD</div>
+        <div class="photo">
+            <img src="photo.jpg" alt="Card Holder Photo">
+        </div>
+        <div class="name">MD RAHIM MIA</div>
+        <div class="designation">EXCAVATOR OPERATOR</div>
+        <div class="details">
+            <b>Employer ID :</b> 1073 <br>
+            <b>Blood Group :</b> AB+ <br>
+            <b>Joined :</b> 02-01-2022 <br>
+            <b>Expiry :</b> 02-05-2023
+        </div>
+        <div class="footer-bar">Authorised</div>
     </div>
-    <div class="company">SM ENGINEERING</div>
-    <div class="header-bar">ID CARD</div>
-    <div class="photo">
-        <img src="photo.jpg" alt="Card Holder Photo">
-    </div>
-    <div class="name">MD RAHIM MIA</div>
-    <div class="designation">EXCAVATOR OPERATOR</div>
-    <div class="details">
-        <b>Employer ID :</b> 1073 <br>
-        <b>Blood Group :</b> AB+ <br>
-        <b>Joined :</b> 02-01-2022 <br>
-        <b>Expiry :</b> 02-05-2023
-    </div>
-    <div class="footer-bar">Authorised</div>
-</div>
 
-<!-- Back Side -->
-<div class="id-card id-back">
-    <div class="header-bar">
-        <span>If found please return the card to</span>
+    <!-- Back Side -->
+    <div class="id-card id-back">
+        <div class="header-bar">
+            <span>If found please return the card to</span>
+        </div>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <div class="company">SM ENGINEERING</div>
+        <div class="contact-title">CONTACT INFORMATION</div>
+        <div class="contact-info">
+            Asian Haighway, Sonarampur <br>
+            Ashuganj, Brahmanbaria, DIT Project <br>
+            CODE NO- 08528. <br>
+            Cell: +880 1711-325817, +880 1711-325820 <br>
+            E-mail: smengineering705@gmail.com
+        </div>
+        <div class="bottom-thin-bar"></div>
     </div>
-    <div class="logo">
-        <img src="logo.png" alt="Company Logo">
-    </div>
-    <div class="company">SM ENGINEERING</div>
-    <div class="contact-title">CONTACT INFORMATION</div>
-    <div class="contact-info">
-        Asian Haighway, Sonarampur <br>
-        Ashuganj, Brahmanbaria, DIT Project <br>
-        CODE NO- 08528. <br>
-        Cell: +880 1711-325817, +880 1711-325820 <br>
-        E-mail: smengineering705@gmail.com
-    </div>
-    <div class="bottom-thin-bar"></div>
 </div>
 
 <!-- PDF Download Button -->
@@ -219,14 +221,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     document.getElementById("downloadBtn").addEventListener("click", function () {
-        const element = document.body;
+        const element = document.getElementById("cardContainer");
         const button = document.getElementById("downloadBtn");
         button.style.display = "none";
+
         html2pdf().from(element).set({
-            margin: 0.2,
+            margin: [0.5,0.5,0.5,0.5],
             filename: "id-card.pdf",
             html2canvas: { scale: 2 },
-            jsPDF: { orientation: "portrait", unit: "in", format: "a4" }
+            jsPDF: { orientation: "landscape", unit: "in", format: "a4" }
         }).save().then(() => {
             button.style.display = "block";
         });
