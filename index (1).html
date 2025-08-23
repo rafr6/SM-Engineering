@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ID Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card-front, .card-back {
+      width: 350px;
+      height: 500px;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border: 2px solid #007ad9;
+    }
+
+    /* ---------- FRONT ---------- */
+    .card-front .blue-header {
+      background: #007ad9;
+      height: 200px;
+      border-bottom-left-radius: 80% 40%;
+      border-bottom-right-radius: 80% 40%;
+      color: white;
+      padding: 10px 15px;
+      position: relative;
+    }
+
+    .card-front .header-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .card-front .blue-header img {
+      height: 45px;
+      margin-right: 10px;
+    }
+
+    .card-front .blue-header .title {
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .card-front .blue-header .title div:first-child {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .card-front .photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid white;
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .card-front .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-front .info {
+      margin-top: 70px;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .info .name {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .info .position {
+      text-align: center;
+      font-size: 14px;
+      color: #007ad9;
+      margin-bottom: 10px;
+    }
+
+    .info div {
+      margin-bottom: 6px;
+    }
+
+    .info strong {
+      width: 80px;
+      display: inline-block;
+    }
+
+    .watermark-front {
+      position: absolute;
+      top: 230px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 48px;
+      color: #007ad9;
+      opacity: 0.05;
+      font-weight: bold;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .email {
+      position: absolute;
+      bottom: 0;
+      background: #007ad9;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    /* ---------- BACK ---------- */
+    .card-back .header {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      background: #007ad9;
+      color: white;
+    }
+
+    .card-back .header img {
+      height: 45px;
+      margin-right: 10px;
+    }
+
+    .card-back .header .text {
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .card-back .header .text div:first-child {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .card-back .address {
+      padding: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .card-back .qr {
+      text-align: center;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .card-back .qr img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+
+    .card-back .watermark-back {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 45px;
+      color: #007ad9;
+      opacity: 0.07;
+      font-weight: bold;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .card-back .signatures {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: absolute;
+      bottom: 35px;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .signatures div {
+      border-top: 1px solid #007ad9;
+      padding-top: 5px;
+      text-align: center;
+      width: 45%;
+    }
+
+    .card-back .footer-bar {
+      position: absolute;
+      bottom: 0;
+      background: #005ba3;
+      width: 100%;
+      height: 25px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- FRONT SIDE -->
+<div class="card-front">
+  <div class="blue-header">
+    <div class="header-row">
+      <img src="company-logo.png" alt="Logo">
+      <div class="title">
+        <div>中国中铁六局集团有限公司</div>
+        <div>CREC Padma Bridge Rail Link Project Division 3</div>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="photo.jpg" alt="Card Holder Photo">
+    </div>
+  </div>
+
+  <div class="watermark-front">CREC</div>
+
+  <div class="info">
+    <div class="name">MD OBAIDUL HASAN</div>
+    <div class="position">Wheel Loaders (Operator)</div>
+    <div><strong>ID:</strong> 110-0027W-0407</div>
+    <div><strong>DOB:</strong> 10-11-2002</div>
+    <div><strong>Phone:</strong> 01832395343</div>
+    <div><strong>NID:</strong> 8712923831</div>
+    <div><strong>Blood:</strong> O+</div>
+    <div><strong>Join:</strong> 20-February-2020</div>
+  </div>
+
+  <div class="email">obaidulhasan381@gmail.com</div>
+</div>
+
+<!-- BACK SIDE -->
+<div class="card-back">
+  <div class="header">
+    <img src="company-logo.png" alt="Logo">
+    <div class="text">
+      <div>中国中铁六局集团有限公司</div>
+      <div>CREC Padma Bridge Rail Link Project Division 3</div>
+    </div>
+  </div>
+
+  <div class="address">
+    Address:<br>
+    China Project, Polia, Bhanga,<br>
+    Faridpur, Dhaka, Bangladesh.
+  </div>
+
+  <div class="qr">
+    <div class="watermark-back">CREC</div>
+    <img src="qrcode.png" alt="QR Code">
+  </div>
+
+  <div class="signatures">
+    <div>Authority Signature</div>
+    <div>Operator Signature</div>
+  </div>
+
+  <div class="footer-bar"></div>
+</div>
+
+</body>
+</html>
