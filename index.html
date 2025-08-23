@@ -27,6 +27,17 @@
         text-align: center;
     }
 
+    /* ফ্রন্ট হেডার (চিকন, একদম উপরে) */
+    .id-front .top-thin-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
+        border-radius: 12px 12px 0 0;
+    }
+
     .header-bar {
         width: 100%;
         padding: 4px 0;
@@ -42,7 +53,7 @@
     .logo img {
         width: 45px;
         height: auto;
-        margin-top: -8px;  /* লোগো আরও উপরে আনা হলো */
+        margin-top: -8px;
     }
 
     .company {
@@ -92,7 +103,7 @@
     .footer-bar {
         position: absolute;
         bottom: 0;
-        right: 0;   /* ডান পাশে করা হলো */
+        right: 0;
         width: 100%;
         padding: 4px 10px;
         color: #fff;
@@ -104,19 +115,28 @@
 
     /* Back Side */
     .id-back .header-bar {
-        display: flex;
-        justify-content: center;  /* সেন্টার */
-        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 12px 12px 0 0;
         padding: 4px 6px;
         font-size: 9px;
-        margin-bottom: 10px;
         text-align: center;
+    }
+
+    .id-back .logo img {
+        margin-top: 16px;
+    }
+
+    .id-back .company {
+        margin-top: 6px;
     }
 
     .id-back .contact-title {
         font-size: 12px;
         font-weight: bold;
-        margin-top: 18px;
+        margin-top: 26px; /* নিচে নামানো হলো */
         margin-bottom: 6px;
         color: #002060;
     }
@@ -153,6 +173,7 @@
 
 <!-- Front Side -->
 <div class="id-card id-front">
+    <div class="top-thin-bar"></div>
     <div class="logo">
         <img src="logo.png" alt="Company Logo">
     </div>
@@ -200,14 +221,14 @@
     document.getElementById("downloadBtn").addEventListener("click", function () {
         const element = document.body;
         const button = document.getElementById("downloadBtn");
-        button.style.display = "none"; // বাটন লুকানো হলো
+        button.style.display = "none";
         html2pdf().from(element).set({
             margin: 0.2,
             filename: "id-card.pdf",
             html2canvas: { scale: 2 },
             jsPDF: { orientation: "portrait", unit: "in", format: "a4" }
         }).save().then(() => {
-            button.style.display = "block"; // ডাউনলোড শেষে আবার দেখা যাবে
+            button.style.display = "block";
         });
     });
 </script>
