@@ -124,7 +124,7 @@
         bottom: 0;
         right: 0;
         width: 100%;
-        height: 8px; /* শুধু গ্রেডিয়েন্ট লাইন রাখলাম */
+        height: 8px; 
         border-radius: 0 0 12px 12px;
         background: linear-gradient(90deg, #7b1fa2, #e53935, #fb8c00, #43a047, #1e88e5);
     }
@@ -156,7 +156,7 @@
     .id-back .contact-title {
         font-size: 12px;
         font-weight: bold;
-        margin-top: 36px;
+        margin-top: 24px; /* আগের চেয়ে একটু উপরে */
         margin-bottom: 6px;
         color: #002060;
     }
@@ -164,7 +164,17 @@
     .id-back .contact-info {
         font-size: 10px;
         line-height: 1.4;
-        margin-top: 6px;
+        margin-top: 4px;
+    }
+
+    /* Barcode */
+    .barcode {
+        position: absolute;
+        bottom: 18px; /* bottom-thin-bar এর উপরে */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: auto;
     }
 
     .bottom-thin-bar {
@@ -231,6 +241,8 @@
             Cell: +880 1711-325817, +880 1711-325820 <br>
             E-mail: smengineering705@gmail.com
         </div>
+        <!-- Barcode Image -->
+        <img src="barcode.png" alt="Barcode" class="barcode">
         <div class="bottom-thin-bar"></div>
     </div>
 </div>
